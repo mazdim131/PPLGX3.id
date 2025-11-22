@@ -9,7 +9,7 @@
         }
 
         .navbar-custom {
-            width: 411px;
+            width: 300px;
             background-color: #1565C0 !important;
             border-radius: 40px;
             margin: 20px auto;
@@ -90,4 +90,5 @@
         .fade-card.show {
             opacity: 1;
             transform: translateY(0);
+
         }
