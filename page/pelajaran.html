@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PPLG-X3 | Website Kelas</title>
     <link rel="stylesheet" href="/style/pelajaran.css">
-    <link rel="icon" href="/img/logo.png" type="image/png">
+    <link rel="icon" href="/asset/img/logo.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -39,11 +39,20 @@
         </div>
     </nav>
 
-    <img src="/img/PPLGX3JadwalPelajaran.svg" class="img-fluid d-flex mx-auto fade-card hidden"
+    <div id="jamWIB" class="d-flex justify-content-center mx-auto fade-card hidden"
+        style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    </div>
+
+    <img src="/asset/img/PPLGX3JadwalPelajaran.svg" class="img-fluid d-flex mx-auto fade-card hidden"
         style="border-radius: 30px; width: 1500px; margin-bottom: 50px;" alt="...">
 
     <div class="container-sm table-content">
-        <h3 class="fade-card hidden">Minggu Ganjil</h3>
+        <h3 class="d-flex justify-content-start fade-card hidden">Minggu Ganjil</h3>
+        <!-- Button trigger modal -->
+        <a href="#" type="button" class="d-flex justify-content-start mx-auto fade-card hidden" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" style="color: silver; text-decoration: none; margin-bottom: 10px;">
+            Lihat detail hari ini
+        </a>
         <div class="d-flex justify-content-center table-responsive-custom fade-card hidden">
             <table border=1>
                 <tr>
@@ -64,7 +73,7 @@
                     <td>Lapangan | Pjok</td>
                     <td>206 | Produktif</td>
                     <td>Lapangan | Pjok</td>
-                    <td>125 | Pipas</td>
+                    <td>203 | Produktif</td>
                     <td>203 | Produktif</td>
                 </tr>
                 <tr>
@@ -76,7 +85,12 @@
                 </tr>
             </table>
         </div>
-        <h3 class="fade-card hidden" style="margin-top: 20px;">Minggu Genap</h3>
+        <h3 class="d-flex justify-content-start fade-card hidden" style="margin-top: 20px;">Minggu Genap</h3>
+        <a href="#" type="button" class="d-flex justify-content-start mx-auto fade-card hidden" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" style="color: silver; text-decoration: none; margin-bottom: 10px;">
+            Lihat detail hari ini
+        </a>
+
         <div class="d-flex justify-content-center table-responsive-custom fade-card hidden">
             <table border=1>
                 <tr>
@@ -123,15 +137,44 @@
                 </tr>
             </table>
         </div>
+
+        <h3 class="d-flex justify-content-start fade-card hidden" style="margin-top: 20px;">Lihat Jadwal Full</h3>
+        <a href="https://docs.google.com/spreadsheets/d/1iI68YsC4bgjjGVfReKFsWJqFBzza6FsnblltEz0xwS8/edit?gid=834174604#gid=834174604"
+            class="btn btn-primary fade-card hidden w-100" style="margin-top: 20px; margin-bottom: 10px;">Minggu
+            Genap</a><br>
+        <a href="https://docs.google.com/spreadsheets/d/1IFi4pcbz_b8z7nMZlkGqnILbvuisIgjad6owI0nMyVc/edit?gid=1898308960#gid=1898308960"
+            class="btn btn-primary fade-card hidden w-100">Minggu Ganjil</a>
+
         <p style="text-align: center; color: silver; margin-top: 40px;">Informasi lebih lanjut? Hubungi <a
-                href="https://wa.me/6285710276264g">Ketua Rombel</a></p>
+                href="https://wa.me/6285710276264">Ketua Rombel</a></p>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-tittle" id="exampleModalLabel"
+                        style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: none; font-size: 15px;">
+                        Jam pelajaran saat ini
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="statusPelajaran" style="font-size: 20px; font-weight: bold; margin-top: 20px;"></div>
+                    <div id="tanggalWIB" style="font-size: 20px; font-weight: bold; margin-top: 20px;"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="container-footer">
         <p><a href="footer.html" style="text-decoration: none; color: white;">PPLGX3</a> All Rights Reserved.2025</p>
     </footer>
     <script src="animated.js"></script>
+    <script src="/js/modalMapel.js"></script>
 </body>
-
 
 </html>
