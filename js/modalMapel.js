@@ -78,7 +78,6 @@ const jadwalProduktif = {
         { mapel: "Kokurikuler", mulai: "09:40", selesai: "11:40" },
         { mapel: "Istirahat 2", mulai: "11:40", selesai: "12:20" },
         { mapel: "Kokurikuler", mulai: "12:20", selesai: "15:50" },
-        { mapel: "Kokurikuler", mulai: "15:50", selesai: "17:00" },
     ],
     "Rabu": [
         { mapel: "Bahasa Inggris", mulai: "08:00", selesai: "09:20" },
@@ -158,4 +157,5 @@ function cekPelajaran() {
 // ===== AUTO REFRESH =====
 setInterval(cekPelajaran, 1000); // update tiap detik
 cekPelajaran(); // langsung tampil saat load
+
 
