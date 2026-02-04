@@ -45,7 +45,7 @@ async function getSheetData() {
                 `;
             }
         });
-
+        
         cardHtml += '</div>';
         projectContainer.innerHTML = cardHtml;
 
