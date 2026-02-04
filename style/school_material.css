@@ -1,9 +1,0 @@
-body {
-    margin: 0;
-    scroll-behavior: smooth;
-}
-
-#card-content {
-    padding: 30px;
-    border: 1px solid silver !important;
-}
