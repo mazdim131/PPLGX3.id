@@ -2,7 +2,7 @@ const body = document.body
 const urlSheets = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQBon0ecZ1BJUOL2YlfGoaFV34POmHcq08Ii7ZEMXtyBGzRRN13bzw16N2cjFytGhVouXfVA0Gou1IZ/pub?gid=1306359463&single=true&output=csv' + '&t=' + Date.now();
 
 async function muatTugas() {
-    console.log("Sedang sinkronisasi data terbaru...")
+    console.log("Sedang sinkronisasi data terbaru...");
 
     try {
         const response = await fetch(urlSheets);
