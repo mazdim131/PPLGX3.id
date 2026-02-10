@@ -1,0 +1,12 @@
+#list-note {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, mimax(280px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+    margin-top: 10rem;
+}
+
+#list-note .col {
+    display: block;
+    width: 100%;
+}
