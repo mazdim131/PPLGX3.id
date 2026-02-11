@@ -1,12 +1,47 @@
 #list-note {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, mimax(280px, 1fr));
-    gap: 1.5rem;
-    align-items: start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+    padding: 0 0.75rem;
+}
+
+.upload button {
+    margin-left: auto;
+    border: none;
+    background-color: #1565C0;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 #list-note .col {
-    display: block;
-    width: 100%;
+    width: 260px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+    #list-note .col {
+        width: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    #list-note .col {
+        width: 260px;
+    }
+}
+
+@media (max-width: 576px) {
+    #list-note .col {
+        width: 100%;
+        max-width: 350px;
+    }
 }

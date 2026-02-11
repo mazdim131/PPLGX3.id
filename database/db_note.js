@@ -21,8 +21,8 @@ async function muatNote() {
 
                 cardHtml +=
                     `     
-                    <div class="col mb-4 d-inline-block" style="float: none; vertical-align: top;">
-                        <div class="card shadow-sm" style="width: 18rem; border-radius: 12px; overflow: hidden; border: 1px solid black; padding: 20px; max-width: 20rem;">
+                        <div class="col mb-2" style="vertical-align: top;">
+                            <div class="card shadow-sm" style="width: 100%; max-width: 260px; box-sizing: border-box; border-radius: 12px; overflow: hidden; border: 1px solid black; padding: 16px;">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="color: #555;">

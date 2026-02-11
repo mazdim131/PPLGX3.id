@@ -28,7 +28,7 @@ async function getSheetData() {
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">${judul}</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">${mapel}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted">Kelompok: ${mapel}</h6>
                                 <hr>
                                 <small>
                                     <strong>Tanggal:</strong> ${tanggal} <br>

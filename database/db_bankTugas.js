@@ -28,7 +28,7 @@ async function muatTugas() {
                 const isiTugas = cols[5].replace(/"/g, "");
 
                 container.innerHTML += `
-                    <div class="card mb-3 shadow-sm" style="border-left: 5px solid #1565C0; border-radius: 10px;">
+                    <div class="card mb-3 shadow-sm" style="border-left: 5px solid #1565C0; border-radius: 10px; margin: auto;">
                         <div class="card-body">
                             <h5 class="card-title font-weight-bold" style="color: #1565C0;">${mapel}</h5>
                             <p class="card-text"><strong>Tugas:</strong> ${isiTugas}</p>
