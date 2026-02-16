@@ -8,6 +8,11 @@ body {
     background-color: #1565C0 !important;
     border-radius: 5px;
     border: none;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
 }
 
 .card {
@@ -58,4 +63,18 @@ body {
 
 .hover-zoom:hover {
     transform: scale(1.05);
+}
+
+.main-box {
+    background: #1565C0;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    display: flex !important;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
