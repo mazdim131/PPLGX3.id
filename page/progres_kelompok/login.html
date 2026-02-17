@@ -88,7 +88,21 @@
         </div>
     </div>
 
-    <main>
+    <!-- toast koneksi -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="connectionToast" class="toast align-items-center text-white border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toastMessage">
+                    Sedang mengecek koneksi...
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <main id="beranda">
         <div class="d-flex justify-content-center align-items-center vh-100">
             <div class="container-login">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -116,23 +130,51 @@
                 <p>Lupa password? <a href="https://wa.me/6285710276264">Hubungi Ketua Rombel</a></p>
             </div>
         </div>
-    </main>
 
-    <!-- toast koneksi -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="connectionToast" class="toast align-items-center text-white border-0" role="alert"
-            aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body" id="toastMessage">
-                    Sedang mengecek koneksi...
+        <div class="container-sm" style="margin-top: 2rem;">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item fade-card hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Tentang Login
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <b>Keamanan Akses Portal PPLG X-3</b><br>
+                            Halaman Login ini merupakan gerbang utama untuk mengakses fitur-fitur khusus yang bersifat
+                            terbatas bagi siswa dan pengelola portal PPLG X-3 SMK Wikrama Bogor. Keamanan data dan
+                            privasi setiap anggota adalah prioritas utama kami dalam membangun ekosistem digital ini.
+                            Melalui proses otentikasi yang ketat, kami memastikan bahwa pengelolaan progres kelompok dan
+                            pengunggahan projek hanya dilakukan oleh pihak yang berwenang. Kami sangat menyarankan
+                            setiap siswa untuk menjaga kerahasiaan kredensial akun masing-masing dan melakukan logout
+                            secara berkala demi keamanan informasi bersama di lingkungan kelas kami.
+                            <hr>
+                            <b>Pentingnya Integritas Data Digital</b><br>
+                            Sebagai calon programmer yang profesional, memahami pentingnya kontrol akses dan integritas
+                            data adalah bagian dari pembelajaran teknis kami di konsentrasi keahlian PPLG. Sistem login
+                            ini mensimulasikan lingkungan aplikasi nyata di industri IT, di mana perlindungan terhadap
+                            aset digital menjadi sangat krusial. Dengan masuk ke dalam sistem, siswa dapat mengelola
+                            lemari projek mereka, memperbarui jam koding, dan berkolaborasi secara lebih mendalam dalam
+                            forum internal. Integritas data yang kami unggah mencerminkan kedisiplinan dan kejujuran
+                            akademis kami sebagai murid SMK Wikrama yang siap bersaing di kancah teknologi global.
+                            <hr>
+                            <b>Panduan Bantuan dan Pemulihan Akun</b><br>
+                            Apabila Anda mengalami kendala saat melakukan proses login atau lupa kata sandi, sistem
+                            menyediakan tautan bantuan langsung menuju ketua rombongan belajar. Kami berkomitmen untuk
+                            terus memantau dan memperbarui sistem keamanan portal ini guna memberikan pengalaman
+                            pengguna yang aman dan nyaman. Terima kasih telah menjadi bagian dari perjalanan digital
+                            PPLG X-3; mari kita gunakan akses ini secara bijak untuk terus berkarya, berinovasi, dan
+                            mendokumentasikan setiap prestasi koding yang kita raih bersama.
+                        </div>
+                    </div>
                 </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                    aria-label="Close"></button>
             </div>
         </div>
-    </div>
+    </main>
 
-    <footer class="container-footer" style="margin-top: 50px; padding: 20px 0;">
+    <footer class="container-footer" style="margin-top: 10rem; padding: 20px 0;">
         <div class="container-sm" style="padding-top: 3rem;">
             <div class="row">
                 <div class="col-md-4 text-justify">
@@ -140,11 +182,12 @@
                         <img src="/asset/img/pplgX3.svg" alt="logo pplg" height="90px">
                         <h1 class="mt-3 text-white">PPLG-X3</h1>
                     </div>
-                    <p class="text-white-50 ms-4" style="font-size: 13px;">Portal resmi siswa PPLG X-3 SMK Wikrama Bogor
+                    <p class="text-white-50 ms-4" style="font-size: 13px;">Portal resmi siswa PPLG X-3 SMK Wikrama
+                        Bogor
                         untuk dokumentasi kegiatan dan portofolio karya digital.</p>
                     <div class="d-flex align-items-center ms-4 text-white gap-3 mt-4">
                         <!-- website -->
-                        <a href="https://www.pplg-x3.my.id/">
+                        <a href="https://www.pplg-x3.my.id/" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-globe2" viewBox="0 0 16 16">
                                 <path
@@ -153,7 +196,7 @@
                         </a>
 
                         <!-- discord -->
-                        <a href="https://discord.gg/3MgvrXm3">
+                        <a href="https://discord.gg/3MgvrXm3" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-discord" viewBox="0 0 16 16">
                                 <path
@@ -162,7 +205,7 @@
                         </a>
 
                         <!-- instagram -->
-                        <a href="https://www.instagram.com/pplg.xthree/">
+                        <a href="https://www.instagram.com/pplg.xthree/" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-instagram" viewBox="0 0 16 16">
                                 <path
@@ -186,16 +229,16 @@
                 <div class="col-md-7 text-center mt-5">
                     <h3 class="text-white">Tautan Cepat</h3>
                     <ul class="list-unstyled">
-                        <li class="mt-3"><a href="page/tentang.html" class="text-white-50"
+                        <li class="mt-3"><a href="/page/tentang.html" class="text-white-50"
                                 style="text-decoration: none;">Tentang
                                 Kelas</a></li>
-                        <li class="mt-3"><a href="page/profil.html" class="text-white-50"
+                        <li class="mt-3"><a href="/page/profil.html" class="text-white-50"
                                 style="text-decoration: none;">Profil Siswa</a></li>
-                        <li class="mt-3"><a href="page/tentang.html" class="text-white-50"
+                        <li class="mt-3"><a href="/page/tentang.html" class="text-white-50"
                                 style="text-decoration: none;">Forum Siswa</a></li>
-                        <li class="mt-3"><a href="page/tentang.html" class="text-white-50"
+                        <li class="mt-3"><a href="/page/tentang.html" class="text-white-50"
                                 style="text-decoration: none;">Pelajaran</a></li>
-                        <li class="mt-3"><a href="page/tentang.html" class="text-white-50"
+                        <li class="mt-3"><a href="/page/tentang.html" class="text-white-50"
                                 style="text-decoration: none;">Catatan</a></li>
                     </ul>
                 </div>
@@ -203,7 +246,7 @@
                 <div class="col-md-1 text-center mt-5">
                     <h3 class="text-white">Legal</h3>
                     <ul class="list-unstyled">
-                        <li class="mt-3"><a href="page/privacy.html" class="text-white-50"
+                        <li class="mt-3"><a href="/page/privacy.html" class="text-white-50"
                                 style="text-decoration: none;">Privacy
                                 Policy</a></li>
                     </ul>
@@ -214,7 +257,7 @@
         </div>
     </footer>
 
-    <script src="animated.js"></script>
+    <script src="/page/animated.js"></script>
     <script src="/js/modalMapel.js"></script>
     <script src="/js/connection-config.js"></script>
     <script src="/js/login.js"></script>

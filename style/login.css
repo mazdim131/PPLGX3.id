@@ -89,11 +89,6 @@ body {
     margin-top: 10px;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-}
-
 .icon-door {
     background-color: #f0f0f0;
     border-radius: 50%;
