@@ -14,11 +14,13 @@ async function getSheetData() {
             const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
             if (columns.length > 1) {
                 const tanggal = columns[0] ? columns[0].replace(/"/g, "") : "";
-                const judul = columns[3] ? columns[3].replace(/"/g, "") : "";
-                const mapel = columns[2] ? columns[2].replace(/"/g, "") : "";
+                const judul = columns[3] ? columns[3].replace(/"/g, "").trim() : "";
+                const mapel = columns[2] ? columns[2].replace(/"/g, "").trim() : "";
                 const email = columns[1] ? columns[1].replace(/"/g, "") : "";
                 const guru = columns[4] ? columns[4].replace(/"/g, "") : "";
                 const sulit = columns[5] ? columns[5].replace(/"/g, "") : "0";
+
+                if (judul === "" && mapel === "") return;
 
                 let rawLink = columns[7] ? columns[7].trim().replace(/"/g, "") : "#";
                 const linkDemo = (rawLink.startsWith('http')) ? rawLink : `https://${rawLink}`;
@@ -36,16 +38,18 @@ async function getSheetData() {
                                     <strong>Guru:</strong> ${guru}
                                 </small>
                             </div>
-                            <div class="card-footer bg-transparent d-flex justify-content-between align-items-center">
-                                <small class="text-muted" style="font-size:0.75rem">${email}</small>
-                                <a href="${linkDemo}" target="_blank" class="btn btn-sm btn-primary">Live Demo</a>
+                            <div class="card-footer bg-transparent d-flex justify-content-between align-items-center gap-2">
+                                <small class="text-muted text-truncate" style="font-size:0.75rem; max-width: 60%;" title="${email}">
+                                    ${email}
+                                </small>
+                                <a href="${linkDemo}" target="_blank" class="btn btn-sm btn-primary flex-shrink-0">Live Demo</a>
                             </div>
                         </div>
                     </div>
                 `;
             }
         });
-        
+
         cardHtml += '</div>';
         projectContainer.innerHTML = cardHtml;
 
@@ -56,7 +60,7 @@ async function getSheetData() {
 
 getSheetData();
 
-inputCari.addEventListener('input', function () { 
+inputCari.addEventListener('input', function () {
     const kataKunci = inputCari.value.toLowerCase();
     const semuaKartu = document.getElementsByClassName('item-kartu');
 
@@ -65,9 +69,9 @@ inputCari.addEventListener('input', function () {
         const mapel = item.querySelector('.card-subtitle').innerText.toLowerCase();
 
         if (judul.includes(kataKunci) || mapel.includes(kataKunci)) {
-            item.style.display = "block"; 
+            item.style.display = "block";
         } else {
-            item.style.display = "none";  
+            item.style.display = "none";
         }
     });
 });
