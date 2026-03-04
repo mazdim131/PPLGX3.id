@@ -26,7 +26,7 @@ async function getSheetData() {
                 const linkDemo = (rawLink.startsWith('http')) ? rawLink : `https://${rawLink}`;
 
                 cardHtml += `
-                    <div class="col item-kartu"> 
+                    <div class="item-kartu"> 
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">${judul}</h5>
