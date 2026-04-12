@@ -1,6 +1,11 @@
 const body = document.body
 const urlSheets = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQBon0ecZ1BJUOL2YlfGoaFV34POmHcq08Ii7ZEMXtyBGzRRN13bzw16N2cjFytGhVouXfVA0Gou1IZ/pub?gid=1306359463&single=true&output=csv' + '&t=' + Date.now();
 
+function normalizeText(value, fallback) {
+    const normalized = String(value || "").replace(/"/g, "").trim();
+    return normalized ? normalized.slice(0, 280) : fallback;
+}
+
 async function muatTugas() {
     console.log("Sedang sinkronisasi data terbaru...");
 
@@ -14,33 +19,59 @@ async function muatTugas() {
 
         if (!container) return console.error("Elemen id 'listTugas' gak ada di HTML!");
 
-        container.innerHTML = '';
+        const fragment = document.createDocumentFragment();
 
         rows.forEach(row => {
             // Regex ini penting supaya kalau ada koma di dalam teks tugas gak berantakan
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
 
             if (cols[1]) {
-                const guru = cols[1].replace(/"/g, "");
-                const mapel = cols[2].replace(/"/g, "");
-                const tgl = cols[3].replace(/"/g, "");
-                const waktu = cols[4].replace(/"/g, "");
-                const isiTugas = cols[5].replace(/"/g, "");
+                const guru = normalizeText(cols[1], "Guru tidak diketahui");
+                const mapel = normalizeText(cols[2], "Mapel tidak diketahui");
+                const tgl = normalizeText(cols[3], "-");
+                const waktu = normalizeText(cols[4], "-");
+                const isiTugas = normalizeText(cols[5], "Tidak ada deskripsi tugas.");
 
-                container.innerHTML += `
-                    <div class="card mb-3 shadow-sm" style="border-left: 5px solid #1565C0; border-radius: 10px; margin: auto;">
-                        <div class="card-body">
-                            <h5 class="card-title font-weight-bold" style="color: #1565C0;">${mapel}</h5>
-                            <p class="card-text"><strong>Tugas:</strong> ${isiTugas}</p>
-                            <hr>
-                            <p class="card-text small text-muted">
-                                <b>Guru:</b> ${guru} | <b>Deadline:</b> ${tgl} (${waktu})
-                            </p>
-                        </div>
-                    </div>
-                `;
+                const card = document.createElement("div");
+                card.className = "card mb-3 shadow-sm";
+                card.style.cssText = "border-left: 5px solid #1565C0; border-radius: 10px; margin: auto;";
+
+                const cardBody = document.createElement("div");
+                cardBody.className = "card-body";
+
+                const title = document.createElement("h5");
+                title.className = "card-title font-weight-bold";
+                title.style.color = "#1565C0";
+                title.textContent = mapel;
+
+                const task = document.createElement("p");
+                task.className = "card-text";
+                const taskLabel = document.createElement("strong");
+                taskLabel.textContent = "Tugas:";
+                task.append(taskLabel, document.createTextNode(` ${isiTugas}`));
+
+                const separator = document.createElement("hr");
+
+                const meta = document.createElement("p");
+                meta.className = "card-text small text-muted";
+                const teacher = document.createElement("b");
+                teacher.textContent = "Guru:";
+                const deadline = document.createElement("b");
+                deadline.textContent = "Deadline:";
+                meta.append(
+                    teacher,
+                    document.createTextNode(` ${guru} | `),
+                    deadline,
+                    document.createTextNode(` ${tgl} (${waktu})`)
+                );
+
+                cardBody.append(title, task, separator, meta);
+                card.appendChild(cardBody);
+                fragment.appendChild(card);
             }
         });
+
+        container.replaceChildren(fragment);
     } catch (error) {
         console.error("Gagal ambil data:", error);
     }
