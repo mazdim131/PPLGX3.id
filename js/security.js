@@ -77,7 +77,8 @@
   }
 
   function getQueue() {
-    return safeJsonParse(localStorage.getItem(queueKey), []);
+    const parsed = safeJsonParse(localStorage.getItem(queueKey), []);
+    return Array.isArray(parsed) ? parsed : [];
   }
 
   function saveQueue(queue) {
